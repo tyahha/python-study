@@ -14,3 +14,4 @@ def gateConstructor(w1,w2,b):
 
 AND = gateConstructor(0.5, 0.5, -0.7)
 OR = gateConstructor(0.5,0.5,-0.2)
+NAND = gateConstructor(-0.1,-0.1,0.2)
