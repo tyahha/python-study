@@ -15,3 +15,8 @@ def gateConstructor(w1,w2,b):
 AND = gateConstructor(0.5, 0.5, -0.7)
 OR = gateConstructor(0.5,0.5,-0.2)
 NAND = gateConstructor(-0.1,-0.1,0.2)
+
+def XOR(x1,x2):
+  s1 = OR(x1,x2)
+  s2 = NAND(x1,x2)
+  return AND(s1,s2)
