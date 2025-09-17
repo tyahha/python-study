@@ -1,14 +1,7 @@
-_, n = map(int, input().split(" "))
-ps = list(map(int, input().split(" ")))
-qs = list(map(int, input().split(" ")))
-found = False
-for p in ps:
-  for q in qs:
-    if p + q == n:
-      found = True
-      break
-  
-  if found:
-    break
-
-print("Yes" if found else "No")
+n = int(input())
+val = ""
+while n != 0:
+  val += "0" if n % 2 == 0 else "1"
+  n //= 2
+val += "0" * 10
+print(val[::-1][-10:])
