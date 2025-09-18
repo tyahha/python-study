@@ -1,7 +1,8 @@
-n = int(input())
-val = ""
-while n != 0:
-  val += "0" if n % 2 == 0 else "1"
-  n //= 2
-val += "0" * 10
-print(val[::-1][-10:])
+ss = input()
+n = 0
+e = 1
+for c in reversed(ss):
+    if c == "1":
+        n += e
+    e *= 2
+print(n)
