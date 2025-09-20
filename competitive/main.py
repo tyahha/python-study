@@ -1,8 +1,15 @@
-n, k = map(int, input().split(" "))
+_, q = map(int, input().split(" "))
 
-count = 0
-for i in range(1, n + 1):
-  for j in range(1, n + 1):
-    if i + j < k and k - (i + j) <= n:
-      count += 1
-print(count)
+aa = list(map(int, input().split(" ")))
+sums = []
+sum = 0
+for a in aa:
+  sum += a
+  sums.append(sum)
+
+for i in range(q):
+  l, r = map(int, input().split(" "))
+  if l == 1:
+    print(sums[r-1])
+  else:
+    print(sums[r-1] - sums[l-2])
