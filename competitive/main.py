@@ -1,28 +1,11 @@
-input()
-
-aa = list(map(int, input().split(" ")))
-
-q = int(input())
-
-sums = [[0,0]]
-wins = 0
-looses = 0
-for a in aa:
-  if a == 1:
-    wins += 1
-  else:
-    looses += 1
-  sums.append([wins, looses])
-
-for i in range(q):
-  l, r = map(int, input().split(" "))
-  pw, pl = sums[r]
-  qw, ql = sums[l-1]
-  wins = pw - qw
-  looses = pl - ql
-  if wins > looses:
-    print("win")
-  elif wins < looses:
-    print("lose")
-  else:
-    print("draw")
+d = int(input())
+n = int(input())
+aa = [0] * (d + 1)
+lrs = [list(map(int, input().split())) for _ in range(n)]
+for l, r in lrs:
+    aa[l - 1] += 1
+    aa[r] -= 1
+count = 0;
+for i in range(1, d+1):
+    count += aa[i - 1]
+    print(count)
