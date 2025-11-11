@@ -1,11 +1,18 @@
-t = int(input())
-n = int(input())
-aa = [0] * (t + 1)
-for _ in range(n):
-    [l, r] = list(map(int, input().split()))
-    aa[l] += 1
-    aa[r] -= 1
-count = 0;
-for i in range(t):
-    count += aa[i]
-    print(count)
+n, k = map(int, input().split())
+aa = list(map(int, input().split()))
+
+def check(x):
+    count = 0
+    for a in aa:
+        count += x // a
+
+    return count >= k
+
+left, right = 1, min(aa) * k
+while left < right:
+    mid = (left + right) // 2
+    if check(mid):
+        right = mid
+    else:
+        left = mid + 1
+print(left)
